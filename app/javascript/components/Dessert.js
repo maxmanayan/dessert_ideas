@@ -2,14 +2,17 @@ import React from "react";
 
 
 
-const Dessert = () => {
+const Dessert = (props) => {
+  const {id, flavor, variety, topping, likes} = props
+
   return(
     <div>
       <h1>Dessert Component</h1>
-      <p>Flavor: </p>
-      <p>Variety: </p>
-      <p>Topping: </p>
-      <p>Likes: </p>
+      <p>ID: {id}</p>
+      <p>Flavor: {flavor}</p>
+      <p>Variety: {variety}</p>
+      <p>Topping: {topping}</p>
+      <p>Likes: {likes}</p>
 
       <button>Delete</button>
       <button>Edit</button>
