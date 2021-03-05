@@ -6,7 +6,7 @@ const Dessert = (props) => {
   const {id, flavor, variety, topping, likes} = props
 
   return(
-    <div>
+    <div className="dessert-container">
       <h1>Dessert Component</h1>
       <p>ID: {id}</p>
       <p>Flavor: {flavor}</p>
