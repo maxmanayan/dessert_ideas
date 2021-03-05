@@ -5,3 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+
+require "faker"
+
+Dessert.destroy_all
+
+
+10.times do
+  Dessert.create(
+    flavor: Faker::Dessert.flavor,
+    variety: Faker::Dessert.variety,
+    topping: Faker::Dessert.topping,
+    likes: Faker::Number.digit,
+  )
+end
+
+
+puts "Seeded #{Dessert.all.size} new desserts"
