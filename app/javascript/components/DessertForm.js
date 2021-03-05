@@ -1,22 +1,35 @@
-import React from "react";
+import React, {useState} from "react";
 
 
 
-const DessertForm = () => {
+const DessertForm = (props) => {
+  const {createDessert} = props
+  const [flavor, setFlavor] = useState("")
+  const [variety, setVariety] = useState("")
+  const [topping, setTopping] = useState("")
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    createDessert({flavor, variety, topping, likes: 0})
+  }
+
+
   return(
     <div className="dessertForm-container">
       <h1>DessertForm Component</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <p>Flavor</p>
-        <input />
+        <input value={flavor} onChange={(e)=>setFlavor(e.target.value)}/>
 
         <p>Variety</p>
-        <input />
+        <input value={variety} onChange={(e)=>setVariety(e.target.value)}/>
 
         <p>Topping</p>
-        <input />
+        <input value={topping} onChange={(e)=>setTopping(e.target.value)}/>
 
-        <button>add</button>
+        <button type="submit">add</button>
       </form>
     </div>
   )

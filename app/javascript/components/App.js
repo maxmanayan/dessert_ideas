@@ -4,12 +4,11 @@ import axios from "axios";
 import DessertForm from "./DessertForm"
 
 // R - Need to be able to read array of desserts
+// C - Need to be able to create a new dessert from dessertForm... and add to array and db
 
 
 const App = () => {
   const [desserts, setDesserts] = useState([])
-
-  const [books, setBooks] = useState([])
 
   const getDesserts = async () => {
     try {
@@ -21,6 +20,17 @@ const App = () => {
     }
   }
 
+
+  const createDessert = async (newDessert) => {
+    try {
+      let res = await axios.post("/desserts", {...newDessert})
+      console.log(res)
+      let newDessertsList = [...desserts, res.data]
+      setDesserts(newDessertsList)
+    } catch(err){
+        console.log(err)
+    }
+  }
   
 
 
@@ -33,7 +43,7 @@ const App = () => {
   return(
     <div>
       <h1>App Page</h1> 
-      <DessertForm />
+      <DessertForm createDessert={createDessert}/>
       <Desserts desserts={desserts}/>
     </div>
   )
