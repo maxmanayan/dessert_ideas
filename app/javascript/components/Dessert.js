@@ -3,7 +3,7 @@ import React from "react";
 
 
 const Dessert = (props) => {
-  const {id, flavor, variety, topping, likes} = props
+  const {id, flavor, variety, topping, likes, deleteDessert} = props
 
   return(
     <div className="dessert-container">
@@ -14,7 +14,7 @@ const Dessert = (props) => {
       <p>Topping: {topping}</p>
       <p>Likes: {likes}</p>
 
-      <button>Delete</button>
+      <button onClick={()=>deleteDessert(id)}>Delete</button>
       <button>Edit</button>
     </div>
   )

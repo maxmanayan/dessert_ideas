@@ -5,6 +5,9 @@ import DessertForm from "./DessertForm"
 
 // R - Need to be able to read array of desserts
 // C - Need to be able to create a new dessert from dessertForm... and add to array and db
+// D - (FE- User should click delete button and form should disappear) + (BE- Once user clicks delete button, dessert should be deleted from db based on ID)
+
+// Make Likes Component functional
 
 
 const App = () => {
@@ -25,15 +28,25 @@ const App = () => {
     try {
       let res = await axios.post("/desserts", {...newDessert})
       console.log(res)
-      let newDessertsList = [...desserts, res.data]
-      setDesserts(newDessertsList)
+      let newDessertsArray = [...desserts, res.data]
+      setDesserts(newDessertsArray)
     } catch(err){
         console.log(err)
     }
   }
   
 
-
+  const deleteDessert = async (id) => {
+    try {
+      console.log(id)
+      let res = await axios.delete(`/desserts/${id}`)
+      console.log(res.data)
+      let newDessertsArray = desserts.filter(dessert => dessert.id !== id ? dessert : res.data)
+      setDesserts(newDessertsArray)
+    } catch(err) {
+        console.log(err)
+    }
+  }
 
   useEffect(()=>{
     getDesserts()
@@ -44,7 +57,7 @@ const App = () => {
     <div>
       <h1>App Page</h1> 
       <DessertForm createDessert={createDessert}/>
-      <Desserts desserts={desserts}/>
+      <Desserts desserts={desserts} deleteDessert={deleteDessert}/>
     </div>
   )
 }

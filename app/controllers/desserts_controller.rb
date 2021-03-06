@@ -18,6 +18,13 @@ class DessertsController < ApplicationController
   end
 
 
+  def destroy
+    @dessert = Dessert.find(params[:id])
+
+    @dessert.destroy 
+  end
+
+
   private
 
   def dessert_params
