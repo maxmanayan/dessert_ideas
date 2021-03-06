@@ -9,9 +9,9 @@ const Dessert = (props) => {
     <div className="dessert-container">
       <h1>Dessert Component</h1>
       <p>ID: {id}</p>
-      <p>Flavor: {flavor}</p>
-      <p>Variety: {variety}</p>
-      <p>Topping: {topping}</p>
+      <p>a {flavor} {variety} -- topped with {topping}</p>
+      {/* <p>Variety: {variety}</p> */}
+      {/* <p>Topping: {topping}</p> */}
       <p>Likes: {likes}</p>
 
       <button onClick={()=>deleteDessert(id)}>Delete</button>

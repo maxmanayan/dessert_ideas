@@ -40,7 +40,6 @@ const App = () => {
     try {
       console.log(id)
       let res = await axios.delete(`/desserts/${id}`)
-      console.log(res.data)
       let newDessertsArray = desserts.filter(dessert => dessert.id !== id ? dessert : res.data)
       setDesserts(newDessertsArray)
     } catch(err) {
