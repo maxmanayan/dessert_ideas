@@ -7,7 +7,7 @@ const Dessert = (props) => {
 
   return(
     <div className="dessert-container">
-      <h1>Dessert Component</h1>
+      <h1>Here's an Idea!</h1>
       <p>ID: {id}</p>
       <p>a {flavor} {variety} -- topped with {topping}</p>
       {/* <p>Variety: {variety}</p> */}
