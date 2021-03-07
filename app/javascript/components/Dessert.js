@@ -18,7 +18,7 @@ const Dessert = (props) => {
       <button onClick={()=>deleteDessert(id)}>Delete</button>
       <button>Edit</button>
 
-      <DessertForm />
+      <DessertForm updateDessert={updateDessert} id={id} flavor={flavor} variety={variety} topping={topping}/>
     </div>
   )
 }

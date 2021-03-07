@@ -3,10 +3,10 @@ import React, {useState} from "react";
 
 
 const DessertForm = (props) => {
-  const {createDessert} = props
-  const [flavor, setFlavor] = useState("")
-  const [variety, setVariety] = useState("")
-  const [topping, setTopping] = useState("")
+  const {createDessert, updateDessert, id, flavor: defaultFlavor, variety: defaultVariety, topping: defaultTopping} = props
+  const [flavor, setFlavor] = useState(defaultFlavor)
+  const [variety, setVariety] = useState(defaultVariety)
+  const [topping, setTopping] = useState(defaultTopping)
 
 
   const handleSubmit = (e) => {
