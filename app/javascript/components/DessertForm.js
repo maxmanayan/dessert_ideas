@@ -13,6 +13,10 @@ const DessertForm = (props) => {
     e.preventDefault()
 
     createDessert({flavor, variety, topping, likes: 0})
+
+    setFlavor("")
+    setVariety("")
+    setTopping("")
   }
 
 

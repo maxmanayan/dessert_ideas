@@ -22,7 +22,10 @@ const App = () => {
         console.log(err)
     }
   }
-
+  
+  useEffect(()=>{
+    getDesserts()
+  },[])
 
   const createDessert = async (newDessert) => {
     try {
@@ -47,9 +50,6 @@ const App = () => {
     }
   }
 
-  useEffect(()=>{
-    getDesserts()
-  },[])
 
 
   return(

@@ -18,6 +18,15 @@ class DessertsController < ApplicationController
   end
 
 
+  def update  
+    @dessert = Dessert.find(params[:id])
+
+    @dessert.update(dessert_params)
+
+    render json: @dessert
+  end 
+
+
   def destroy
     @dessert = Dessert.find(params[:id])
 
