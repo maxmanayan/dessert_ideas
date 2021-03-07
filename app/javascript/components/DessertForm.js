@@ -4,9 +4,9 @@ import React, {useState} from "react";
 
 const DessertForm = (props) => {
   const {createDessert, updateDessert, id, flavor: defaultFlavor, variety: defaultVariety, topping: defaultTopping} = props
-  const [flavor, setFlavor] = useState(defaultFlavor)
-  const [variety, setVariety] = useState(defaultVariety)
-  const [topping, setTopping] = useState(defaultTopping)
+  const [flavor, setFlavor] = useState(defaultFlavor ? defaultFlavor : "")
+  const [variety, setVariety] = useState(defaultVariety ? defaultVariety : "")
+  const [topping, setTopping] = useState(defaultTopping ? defaultTopping : "")
 
 
   const handleSubmit = (e) => {
@@ -18,9 +18,9 @@ const DessertForm = (props) => {
         createDessert({flavor, variety, topping, likes: 0})
     }
 
-    setFlavor("")
-    setVariety("")
-    setTopping("")
+    setFlavor(defaultFlavor ? flavor : "")
+    setVariety(defaultVariety ? variety : "")
+    setTopping(defaultTopping ? topping : "")
   }
 
 

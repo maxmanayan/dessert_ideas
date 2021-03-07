@@ -55,20 +55,34 @@ const App = () => {
   const updateDessert = async (updatedObj, id) => {
     try {
       let res = await axios.put(`/desserts/${id}`, {...updatedObj})
-      console.log(res.data)
-      setDesserts([{...desserts}, res.data])
+
+      let newDessertArr = desserts.map((dessert) => dessert.id !== id ? dessert : res.data)
+
+      setDesserts(newDessertArr)
     } catch(err) {
         console.log(err)
     }
   }
 
+  const likeDessert = async (updatedObj, id) => {
+    try {
+      let addToLikes = updatedObj.likes += 1
 
+      let res = await axios.put(`/desserts/${id}/likes`, {...updatedObj})
+
+      let newDessertArr = desserts.map((dessert) => dessert.id !== id ? dessert : res.data)
+
+      setDesserts(newDessertArr)
+    } catch(err) {
+      console.log(err)
+    }
+  }
 
   return(
     <div>
       <h1>App Page</h1> 
       <DessertForm createDessert={createDessert}/>
-      <Desserts desserts={desserts} deleteDessert={deleteDessert} updateDessert={updateDessert}/>
+      <Desserts desserts={desserts} deleteDessert={deleteDessert} updateDessert={updateDessert} likeDessert={likeDessert}/>
     </div>
   )
 }

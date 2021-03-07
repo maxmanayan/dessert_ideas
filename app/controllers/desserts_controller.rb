@@ -34,6 +34,18 @@ class DessertsController < ApplicationController
   end
 
 
+
+  def likes 
+    @dessert = Dessert.find(params[:id])
+
+    @dessert.update(dessert_params)
+
+    render json: @dessert
+
+    # redirect_to root_path
+  end
+
+
   private
 
   def dessert_params

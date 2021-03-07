@@ -3,4 +3,8 @@ Rails.application.routes.draw do
   root "desserts#app"
 
   resources :desserts
+
+  #custom route for likes
+
+  put "/desserts/:id/likes", to: "desserts#likes"
 end
