@@ -52,11 +52,21 @@ const App = () => {
 
 
 
+  const updateDessert = async (id) => {
+    try {
+      console.log(id)
+    } catch(err) {
+        console.log(err)
+    }
+  }
+
+
+
   return(
     <div>
       <h1>App Page</h1> 
       <DessertForm createDessert={createDessert}/>
-      <Desserts desserts={desserts} deleteDessert={deleteDessert}/>
+      <Desserts desserts={desserts} deleteDessert={deleteDessert} updateDessert={updateDessert}/>
     </div>
   )
 }

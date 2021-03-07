@@ -1,9 +1,10 @@
 import React from "react";
+import DessertForm from "./DessertForm";
 
 
 
 const Dessert = (props) => {
-  const {id, flavor, variety, topping, likes, deleteDessert} = props
+  const {id, flavor, variety, topping, likes, deleteDessert, updateDessert} = props
 
   return(
     <div className="dessert-container">
@@ -16,6 +17,8 @@ const Dessert = (props) => {
 
       <button onClick={()=>deleteDessert(id)}>Delete</button>
       <button>Edit</button>
+
+      <DessertForm />
     </div>
   )
 }

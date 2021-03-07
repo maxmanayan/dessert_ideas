@@ -3,10 +3,10 @@ import Dessert from "./Dessert"
 
 
 const Desserts = (props) => {
-  const {desserts, deleteDessert} = props
+  const {desserts, deleteDessert, updateDessert} = props
 
   const renderDesserts = () => {
-    return desserts.map((dessert) => <Dessert key={dessert.id} {...dessert} deleteDessert={deleteDessert}/>)
+    return desserts.map((dessert) => <Dessert key={dessert.id} {...dessert} deleteDessert={deleteDessert} updateDessert={updateDessert}/>)
   }
   
   return(
