@@ -12,7 +12,11 @@ const DessertForm = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    createDessert({flavor, variety, topping, likes: 0})
+    if (id) {
+      updateDessert({flavor, variety, topping}, id)
+    } else {
+        createDessert({flavor, variety, topping, likes: 0})
+    }
 
     setFlavor("")
     setVariety("")
@@ -22,7 +26,7 @@ const DessertForm = (props) => {
 
   return(
     <div className="dessertForm-container">
-      <h1>DessertForm Component</h1>
+      <h1>{id ? "Edit Form" : "Add Form"}</h1>
       <form onSubmit={handleSubmit}>
         <p>Flavor</p>
         <input value={flavor} onChange={(e)=>setFlavor(e.target.value)}/>
@@ -33,7 +37,7 @@ const DessertForm = (props) => {
         <p>Topping</p>
         <input value={topping} onChange={(e)=>setTopping(e.target.value)}/>
 
-        <button type="submit">add</button>
+        <button type="submit">{id ? "update" : "create"}</button>
       </form>
     </div>
   )

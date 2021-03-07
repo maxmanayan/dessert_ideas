@@ -52,9 +52,11 @@ const App = () => {
 
 
 
-  const updateDessert = async (id) => {
+  const updateDessert = async (updatedObj, id) => {
     try {
-      console.log(id)
+      let res = await axios.put(`/desserts/${id}`, {...updatedObj})
+      console.log(res.data)
+      setDesserts([{...desserts}, res.data])
     } catch(err) {
         console.log(err)
     }
