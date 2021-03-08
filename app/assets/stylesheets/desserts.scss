@@ -30,6 +30,11 @@
   height: auto;
 
   text-align: center;
+
+}
+
+.body-header {
+  font-size: 3em;
 }
 
 .main-content {
@@ -44,16 +49,13 @@
 
 
 .desserts-container {
-  // background: red;
   width: 75%;
-  // border: 1px solid black;
-  background: rgba(39, 179, 179, 0.171);
+  // background: rgba(39, 179, 179, 0.171);
+  // border-radius: 10%;
 }
 
 
 .desserts-container-contents {
-  // background: red;
-  // width: 75%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
   gap: 1rem;
@@ -71,6 +73,9 @@
   max-height: fit-content;
 }
 
+.dessert-container-idea {
+  background: rgba(255, 248, 220, 0.5);
+}
 
 .dessertForm-container {
   border: 1px solid black;
@@ -79,4 +84,22 @@
 
   height: fit-content;
   padding: 2em;
+
+  input {
+    width: 70%;
+  }
+}
+
+
+.likes-container {
+  // background: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2em;
+
+  button {
+    height: fit-content;
+    margin-left: 2em;
+  }
 }

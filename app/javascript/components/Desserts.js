@@ -11,7 +11,7 @@ const Desserts = (props) => {
   
   return(
     <div className="desserts-container">
-      <h1>Desserts Component</h1>
+      <h1>What's For Dessert?</h1>
       <div className="desserts-container-contents">
         {renderDesserts()}
       </div>

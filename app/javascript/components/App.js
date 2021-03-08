@@ -80,7 +80,7 @@ const App = () => {
 
   return(
     <div className="body">
-      <h1>Dessert Ideas</h1> 
+      <h1 className="body-header">Desserts 🍰</h1> 
       <div className="main-content">
         <div>
           <div className="main-content-form">
