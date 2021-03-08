@@ -26,7 +26,7 @@ const DessertForm = (props) => {
 
   return(
     <div className="dessertForm-container">
-      <h1>{id ? "Edit Form" : "Add Form"}</h1>
+      <h1>{id ? "Edit Dessert" : "Add Dessert"}</h1>
       <form onSubmit={handleSubmit}>
         <p>Flavor</p>
         <input value={flavor} onChange={(e)=>setFlavor(e.target.value)}/>

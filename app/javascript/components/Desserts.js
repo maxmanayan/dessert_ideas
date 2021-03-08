@@ -10,9 +10,11 @@ const Desserts = (props) => {
   }
   
   return(
-    <div>
+    <div className="desserts-container">
       <h1>Desserts Component</h1>
-      {renderDesserts()}
+      <div className="desserts-container-contents">
+        {renderDesserts()}
+      </div>
     </div>
   )
 }

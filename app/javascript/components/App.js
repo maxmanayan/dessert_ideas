@@ -79,10 +79,16 @@ const App = () => {
   }
 
   return(
-    <div>
-      <h1>App Page</h1> 
-      <DessertForm createDessert={createDessert}/>
-      <Desserts desserts={desserts} deleteDessert={deleteDessert} updateDessert={updateDessert} likeDessert={likeDessert}/>
+    <div className="body">
+      <h1>Dessert Ideas</h1> 
+      <div className="main-content">
+        <div>
+          <div className="main-content-form">
+            <DessertForm createDessert={createDessert}/>
+          </div>
+        </div>
+        <Desserts desserts={desserts} deleteDessert={deleteDessert} updateDessert={updateDessert} likeDessert={likeDessert}/>
+      </div>
     </div>
   )
 }
